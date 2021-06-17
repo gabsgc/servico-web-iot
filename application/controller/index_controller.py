@@ -36,10 +36,11 @@ def buscarMedicaoDispositivo(id):
             medicao_dispositivo.append(medicao.toDict())
     return jsonify(medicao_dispositivo)
 
-@app.route('/medicao/data/<int:data>', methods=['GET'])
+@app.route('/medicao/data/<data>', methods=['GET'])
 def buscarMedicaoData(data):
     medicao_data = []
     for medicao in medicao_list:
-        if data == medicao._data:
+        date = medicao._data.replace('/', '')
+        if data == date:
             medicao_data.append(medicao.toDict())
     return jsonify(medicao_data)
