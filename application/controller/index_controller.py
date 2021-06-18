@@ -33,7 +33,7 @@ def addMedicao():
 def buscarMedicaoDispositivo(id):
     medicao_dispositivo = []
     for medicao in medicao_list:
-        if id == medicao._dispositivo_id:
+        if id == medicao._dispositivoId:
             medicao_dispositivo.append(medicao.toDict())
     return jsonify(medicao_dispositivo)
 

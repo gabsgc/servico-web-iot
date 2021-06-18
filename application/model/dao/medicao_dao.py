@@ -9,9 +9,9 @@ class MedicaoDAO:
         medicao.id = len(medicao_list) + 1
         medicao_list.append(medicao)
         medicao_dict_list = []
-        for medicao in medicao_dict_list:
+        for medicao in medicao_list:
             medicao_dict_list.append(medicao.toDict())
-        with open('medidas.json', 'w') as file:
+        with open('medidas.json', 'a') as file:
             json.dump(medicao_dict_list, file)
 
     def listarTodos(self) -> List[Medicao]:
