@@ -1,14 +1,14 @@
 from datetime import datetime
 
 class Medicao:
-    def __init__(self, id, dispositivo_id, materia, gas, nitrogenio, ozonio, temp, umidade, data):
+    def __init__(self, id, dispositivoId, materiaParticulada, gas, nitrogenio, gasOzonio, temperatura, umidade, data):
         self._id = id
-        self._dispositivo_id = dispositivo_id
-        self._materia_particulada = materia
+        self._dispositivoId = dispositivoId
+        self._materiaParticulada = materiaParticulada
         self._gas = gas
         self._nitrogenio = nitrogenio
-        self._gas_ozonio = ozonio
-        self._temperatura = temp
+        self._gasOzonio = gasOzonio
+        self._temperatura = temperatura
         self._umidade = umidade
         self._data = data
       
@@ -22,19 +22,19 @@ class Medicao:
 
     @property
     def dispositivoId(self) -> int:
-        return self._dispositivo_id
+        return self._dispositivoId
     
     @dispositivoId.setter
     def dispositivoId(self, value:int):
-        self._dispositivo_id = value
+        self._dispositivoId = value
 
     @property
     def materiaParticulada(self) -> float:
-        return self._valor
+        return self._materiaParticulada
     
     @materiaParticulada.setter
     def materiaParticulada(self, value: float):
-        self._valor = value
+        self._materiaParticulada = value
 
     @property
     def gas(self) -> float:
@@ -54,11 +54,11 @@ class Medicao:
 
     @property
     def gasOzonio(self) -> float:
-        return self._gas_ozonio
+        return self._gasOzonio
     
     @gasOzonio.setter
     def gasOzonio(self, value: float):
-        self._gas_ozonio = value
+        self._gasOzonio = value
 
     @property
     def temperatura(self) -> float:
@@ -77,21 +77,21 @@ class Medicao:
         self._umidade = value
 
     @property
-    def data(self) -> datetime:
+    def data(self):
         return self._data
     
     @data.setter
-    def data(self, value:datetime):
+    def data(self, value):
         self._data = value
     
     def toDict(self) -> dict:
         return {
             "id": self._id,
-            "dispositivoId": self._dispositivo_id,
-            "materiaParticulada": self._materia_particulada,
+            "dispositivoId": self._dispositivoId,
+            "materiaParticulada": self._materiaParticulada,
             "gas": self._gas,
             "nitrogenio": self._nitrogenio,
-            "gasOzonio": self._gas_ozonio,
+            "gasOzonio": self._gasOzonio,
             "temperatura": self._temperatura,
             "umidade": self._umidade,
             "data": self._data

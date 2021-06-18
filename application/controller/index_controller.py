@@ -16,15 +16,16 @@ def listarMedicao():
 @app.route('/medicao', methods=['POST'])
 def addMedicao():
     id = len(medicao_list) + 1
-    dispositivoId = int(request.json.get('dispositivoId', None))
-    materiaParticulada = float(request.json.get('materiaParticulada', None))
-    gas = float(request.json.get('gas', None))
-    nitrogenio = float(request.json.get('nitrogenio', None))
-    gasOzonio = float(request.json.get('gasOzonio', None))
-    temperatura = float(request.json.get('temperatura', None))
-    umidade = float(request.json.get('umidade', None))
-    data = datetime.strptime(request.json.get('data', None), '%d/%m/%Y' )
+    dispositivoId = int(request.json.get("dispositivoId", None))
+    materiaParticulada = float(request.json.get("materiaParticulada", None))
+    gas = float(request.json.get("gas", None))
+    nitrogenio = float(request.json.get("nitrogenio", None))
+    gasOzonio = float(request.json.get("gasOzonio", None))
+    temperatura = float(request.json.get("temperatura", None))
+    umidade = float(request.json.get("umidade", None))
+    data = request.json.get("data", None)
     medicao = Medicao(id, dispositivoId, materiaParticulada, gas, nitrogenio, gasOzonio, temperatura, umidade, data)
+    medicao_list.append(medicao)
     MedicaoDAO().inserir(medicao)
     return medicao.toDict(), 201
 
