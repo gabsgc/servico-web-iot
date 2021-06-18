@@ -1,0 +1,24 @@
+[
+    {
+      "data": "12/06/2021",
+      "dispositivoId": 1,
+      "gas": 10,
+      "gasOzonio": 1,
+      "id": 1,
+      "materiaParticulada": 12,
+      "nitrogenio": 50,
+      "temperatura": 20,
+      "umidade": 16
+    },
+    {
+      "data": "18/06/2021",
+      "dispositivoId": 2,
+      "gas": 10,
+      "gasOzonio": 1,
+      "id": 2,
+      "materiaParticulada": 21,
+      "nitrogenio": 43,
+      "temperatura": 19,
+      "umidade": 36
+    }
+  ]
